@@ -1,20 +1,19 @@
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 
 const { createBrowserRouter } = require('react-router-dom');
-
-const Loading = <div>로딩중...</div>
-const Main = import('../pages/MainPage')
-const About = import('../pages/AboutPages')
+const Main = lazy(() => import('../pages/MainPage'));
+const About = lazy(() => import('../pages/AboutPages'));
+const Loading = <div>로딩중입니다...</div>
 
 const root = createBrowserRouter([
     {
         path: '',
-        element:<Suspense fallback={Loading}><Main></Main></Suspense>
+        element:<Suspense fallback={Loading}><Main /></Suspense>
     },
 
     {
         path: 'about',
-        element:<Suspense fallback={Loading}><About></About></Suspense>
+        element:<Suspense fallback={Loading}><About /></Suspense>
     }
 
 

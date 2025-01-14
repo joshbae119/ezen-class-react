@@ -1,10 +1,11 @@
 import React from 'react';
+import BasicLayout from '../layouts/BasicLayout';
 
 const MainPage = () => {
     return (
-        <div className="text-3xl">   
-            <div> 메인페이지입니다. </div>
-        </div>
+        <BasicLayout>
+        <div className="text-3xl">MainPage</div>
+        </BasicLayout>
     );
 }
 export default MainPage;

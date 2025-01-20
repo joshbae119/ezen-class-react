@@ -1,24 +1,21 @@
-import { useParams, useNavigate } from "react-router-dom";
+import {
+  useParams,
+  useNavigate,
+  useSearchParams,
+  createSearchParams,
+} from "react-router-dom";
 import { useCallback } from "react";
+import ReadComponent from "../../components/todo/ReadComponent";
 
 const ReadPage = () => {
-    const { tno } = useParams();
-    
-    const navigate = useNavigate();
+  const { tno } = useParams();
 
-    const MoveToModify = useCallback(  (tno) => {
-        navigate({pathname:`/todo/modify/${tno}`})
-    } , [tno])
-    
-
-    return (
-        <div className="text-3xl font-extrabold">
-            글읽기 컴포넌트 {tno}
-            <div>
-                <button onClick={() => MoveToModify(33)}>수정하기</button>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="font extrabold w-full bg-white mt-6">
+      <div className="text-2xl">Todo Read Page Component {tno}</div>
+      <ReadComponent tno={tno}></ReadComponent>
+    </div>
+  );
+};
 
 export default ReadPage;

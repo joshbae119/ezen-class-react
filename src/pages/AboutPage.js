@@ -4,7 +4,7 @@ const AboutPage = () => {
   return (
     <BasicLayout>
       <div>
-        <h1>About Page임다</h1>
+        <h1>About Page</h1>
       </div>
     </BasicLayout>
   );

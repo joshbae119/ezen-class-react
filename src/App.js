@@ -6,11 +6,4 @@ import root from "./router/root";
 function App() {
   return <RouterProvider router={root}></RouterProvider>;
 }
-
-// const obj = () => {
-//   return (
-//   <></>
-//   );
-// }
-
 export default App;

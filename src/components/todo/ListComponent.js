@@ -22,6 +22,7 @@ const ListComponent = () => {
 
   useEffect(() => {
     getList({ page, size }).then((res) => {
+      console.log(res);
       setServerData(res);
     });
   }, [page, size]);

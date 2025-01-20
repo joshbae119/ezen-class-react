@@ -16,6 +16,7 @@ const ReadComponent = ({ tno }) => {
 
   useEffect(() => {
     getOne(tno).then((res) => {
+      console.log(res);
       setTodo(res);
     });
   }, [tno]);
@@ -23,10 +24,10 @@ const ReadComponent = ({ tno }) => {
   return (
     <div className="border-2 border-sky-200 mt-10 m-2 p-4">
       {makeDiv("TNO", todo.tno)}
-      {makeDiv("Title", todo.title)}
-      {makeDiv("Writer", todo.writer)}
-      {makeDiv("Due Date", todo.duDate)}
-      {makeDiv("Complete", todo.complete ? "완료" : "미완료")}
+      {makeDiv("TITLE", todo.title)}
+      {makeDiv("WRITER", todo.writer)}
+      {makeDiv("DUEDATE", todo.duDate)}
+      {makeDiv("COMPLETE", todo.complete ? "Complted" : "not yet")}
       <div className="flex justify-end p-4">
         <button type = "button"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
